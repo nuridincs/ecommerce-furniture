@@ -366,4 +366,13 @@ class depan extends CI_Controller {
 		$this->load->view('depan/templating/templating',$data);
 	}
 
+	function search(){
+		$param = $this->input->post('search');
+		$sql = "SELECT * FROM tb_barang WHERE nama_barang LIKE '%$param%'";
+		$query = $this->db->query($sql);
+		$data['result'] = $query->result();
+		$data['isi']='depan/search';
+		$this->load->view('depan/templating/templating', $data);
+	}
+
 }

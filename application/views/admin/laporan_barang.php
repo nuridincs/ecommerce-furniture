@@ -13,7 +13,7 @@
 	$pdf ->AddPage();
 	$pdf ->SetFont('Times','B',20);
 	$pdf ->Cell(350);
-	$pdf ->Cell(500,10,'XYZ Furniture',0,0,'L');
+	$pdf ->Cell(500,10,'WW Furniture',0,0,'L');
 	$pdf ->Ln(14);
 	$pdf ->Cell(360);
 	$pdf ->SetFont('Times','I',12);

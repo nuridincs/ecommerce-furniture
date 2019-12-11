@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>XYZ Furniture</title>
+<title>WW Furniture</title>
 <!--/tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,13 +45,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<?php if ($this->session->userdata('kd_pelanggan')){?>
 			<li><a href="<?php echo site_url('depan/profil')?>"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> Selamat Datang <?=$this->session->userdata('nama_pelanggan')?></a></li>
 			<li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
-			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">xyz.furniture@gmail.com</a></li>
+			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">ww.furniture@gmail.com</a></li>
 			<li><i class="glyphicon glyphicon-off" aria-hidden="true"></i><a href="<?php echo site_url('depan/logout')?>">Logout</a></li>
 		<?php }else{ ?>
 			<li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
 			<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
 			<li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
-			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">xyz.furniture@gmail.com</a></li>
+			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">ww.furniture@gmail.com</a></li>
 		<?php } ?>
 		</ul>
 	</div>
@@ -60,37 +60,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header-bot -->
 <div class="header-bot">
 	<div class="header-bot_inner_wthreeinfo_header_mid">
+		<!-- header-bot -->
+		<div class="col-md-2 logo_agile">
+			<h1><a href="#"><span>ww</span>
+				<!-- w Furniture  -->
+				<!-- <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i> -->
+			</a></h1>
+		</div>
 		<div class="col-md-4 header-middle">
-			<form action="#" method="post">
+			<form action="<?= base_url('depan/search') ?>" method="post">
 					<input type="search" name="search" placeholder="Search here..." required="">
 					<input type="submit" value=" ">
 				<div class="clearfix"></div>
 			</form>
-		</div>
-		<!-- header-bot -->
-			<div class="col-md-4 logo_agile">
-				<h1><a href="#"><span>X</span>yz Furniture <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
-			</div>
-        <!-- header-bot -->
-		<div class="col-md-4 agileits-social top_content">
-						<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						                                   <li class="share">Share On : </li>
-															<li><a href="#" class="facebook">
-																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter"> 
-																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
-
-
-
 		</div>
 		<div class="clearfix"></div>
 	</div>
@@ -128,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 					</li>
 					<li class=" menu__item"><a class="menu__link" href="<?php echo site_url('depan/Riwayat')?>">Riwayat</a></li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo site_url('depan/about')?>">About</a></li>
+					<!-- <li class=" menu__item"><a class="menu__link" href="<?php //echo site_url('depan/about')?>">About</a></li> -->
 					<li class=" menu__item"><a class="menu__link" href="<?php echo site_url('depan/kontak')?>">Contact</a></li>
 				  </ul>
 				<?php }else{ ?>
@@ -145,7 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>
 
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo site_url('depan/about')?>">About</a></li>
+					<!-- <li class=" menu__item"><a class="menu__link" href="<?php //echo site_url('depan/about')?>">About</a></li> -->
 					<li class=" menu__item"><a class="menu__link" href="<?php echo site_url('depan/kontak')?>">Contact</a></li>
 				  </ul>
 				<?php } ?>
@@ -188,7 +170,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div> 
 							<input type="submit" value="Sign In">
 						</form>
-						  <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
+						  <!-- <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
 															<li><a href="#" class="facebook">
 																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
@@ -201,7 +183,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 															<li><a href="#" class="pinterest">
 																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
+														</ul> -->
 														<div class="clearfix"></div>
 														<p><a href="#" data-toggle="modal" data-target="#myModal2" > Don't have an account?</a></p>
 
@@ -251,7 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div> 
 							<input type="submit" value="Sign Up">
 						</form>
-						  <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
+<!-- 						  <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
 															<li><a href="#" class="facebook">
 																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
@@ -264,13 +246,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 															<li><a href="#" class="pinterest">
 																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
+														</ul> -->
 														<div class="clearfix"></div>
 														<p><a href="#">By clicking register, I agree to your terms</a></p>
 
 						</div>
 						<div class="col-md-4 modal_body_right modal_body_right1">
-							<img style="height: 430px" src="<?php echo base_url('assets/kopi.jpg')?>" alt=" "/>
+							<!-- <img style="height: 430px" src="<?php //echo base_url('assets/kopi.jpg')?>" alt=" "/> -->
 						</div>
 						<div class="clearfix"></div>
 					</div>

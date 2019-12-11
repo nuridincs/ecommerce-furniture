@@ -6,8 +6,8 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; <?= date('Y'); ?>
+							<span class="blue bolder">WW</span>
+							Furniture &copy; <?= date('Y'); ?>
 						</span>
 					</div>
 				</div>

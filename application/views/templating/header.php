@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Tables - Ace Admin</title>
+		<title>Panel - WW Furniture</title>
 
 		<meta name="description" content="Static &amp; Dynamic Tables" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -73,21 +73,21 @@
 					<a href="index.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							Ace Admin
+							WW Furniture
 						</small>
 					</a>
 				</div>
 
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
-						<li class="grey dropdown-modal">
+						<li class="green dropdown-modal">
 							<a target="_blank" href="<?php echo site_url('depan/index')?>">
 								<i class="ace-icon fa fa-globe"></i>
 								<span class="badge badge-grey">Lihat Web</span>
 							</a>
 						</li>
 
-						<li class="purple dropdown-modal">
+						<!-- <li class="purple dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
 								<span class="badge badge-important">8</span>
@@ -140,7 +140,7 @@
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
 											<a href="#" class="clearfix">
-												<img src="<?php echo base_url('assets/admin/images/avatars/avatar5.png')?>" class="msg-photo" alt="Fred's Avatar" />
+												<img src="<?php //echo base_url('assets/admin/images/avatars/avatar5.png')?>" class="msg-photo" alt="Fred's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
@@ -164,21 +164,21 @@
 									</a>
 								</li>
 							</ul>
-						</li>
+						</li> -->
 
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="<?php echo base_url('assets/admin/images/avatars/user.jpg')?>" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="<?php echo base_url('assets/admin/images/avatars/avatar2.png')?>" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									<?php echo $this->session->userdata('nama_adm'); ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
+								<!-- <li>
 									<a href="#">
 										<i class="ace-icon fa fa-cog"></i>
 										Settings
@@ -190,7 +190,7 @@
 										<i class="ace-icon fa fa-user"></i>
 										Profile
 									</a>
-								</li>
+								</li> -->
 
 								<li class="divider"></li>
 
@@ -216,36 +216,6 @@
 				<script type="text/javascript">
 					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
-
-				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						<button class="btn btn-success">
-							<i class="ace-icon fa fa-signal"></i>
-						</button>
-
-						<button class="btn btn-info">
-							<i class="ace-icon fa fa-pencil"></i>
-						</button>
-
-						<button class="btn btn-warning">
-							<i class="ace-icon fa fa-users"></i>
-						</button>
-
-						<button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
-						</button>
-					</div>
-
-					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span>
-
-						<span class="btn btn-info"></span>
-
-						<span class="btn btn-warning"></span>
-
-						<span class="btn btn-danger"></span>
-					</div>
-				</div><!-- /.sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
 					<li class="">
@@ -329,19 +299,19 @@
 							</li>
 
 							<li>
-								<a href="#">Tables</a>
+								<a href="#">Data</a>
 							</li>
-							<li class="active">Simple &amp; Dynamic</li>
+							<!-- <li class="active">Simple &amp; Dynamic</li> -->
 						</ul><!-- /.breadcrumb -->
 
-						<div class="nav-search" id="nav-search">
+						<!-- <div class="nav-search" id="nav-search">
 							<form class="form-search">
 								<span class="input-icon">
 									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 									<i class="ace-icon fa fa-search nav-search-icon"></i>
 								</span>
 							</form>
-						</div><!-- /.nav-search -->
+						</div> --><!-- /.nav-search -->
 					</div>
 
 					<div class="page-content">

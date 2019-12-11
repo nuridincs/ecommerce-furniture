@@ -33,7 +33,7 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h3>Koleksi <span>Terbaik</span></h3>
-						<p>Menuju 17 Agustus</p>
+						<!-- <p>Menuju 17 Agustus</p> -->
 						<a class="hvr-outline-out button2" href="#">Belanja Sekarang </a>
 					</div>
 				</div>
@@ -221,7 +221,7 @@
 	<!-- /we-offer -->
 		<div class="sale-w3ls">
 			<div class="container">
-				<h6>Special Lebaran <span>50%</span> Diskon</h6>
+				<h6>Special <span>50%</span> Diskon</h6>
  
 				<a class="hvr-outline-out button2" href="#">Belanja Sekarang </a>
 			</div>

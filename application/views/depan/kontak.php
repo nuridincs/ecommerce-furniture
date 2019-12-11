@@ -38,7 +38,7 @@
 						<div class="contact-grid-agile-w33">
 							<i class="fa fa-envelope-o" aria-hidden="true"></i>
 							<h4>Email</h4>
-							<p><a href="#">xyz.furniture@gmail.com</a></p>
+							<p><a href="#">ww.furniture@gmail.com</a></p>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
@@ -61,7 +61,7 @@
 							<div class="mail-agileits-w3layouts">
 								<i class="fa fa-envelope-o" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Mail </p><a href="#">xyz.furniture@gmail.com</a>
+									<p>Mail </p><a href="#">ww.furniture@gmail.com</a>
 								</div>
 								<div class="clearfix"> </div>
 							</div>

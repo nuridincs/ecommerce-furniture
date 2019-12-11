@@ -44,6 +44,13 @@
                               <div class="col-md-9 col-sm-9 col-xs-12">
                                 <input type="text" name="nama_barang" required="" class="form-control">
                               </div>
+                            </div> 
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="form-field-1"> Deskripsi Barang  </label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <textarea name="deskripsi" class="form-control" />
+                                </textarea> 
+                              </div>
                             </div>
                             <div class="form-group">
                               <label class="control-label col-md-3 col-sm-3 col-xs-12">Gambar Barang</label>
@@ -92,7 +99,8 @@
 												<thead>
 													<tr>
 														<th style="text-align: center;">Kode</th>
-														<th style="text-align: center;">Nama</th>
+                            <th style="text-align: center;">Nama</th>
+														<th style="text-align: center;">Deskripsi</th>
 														<th style="text-align: center;">Gambar</th>
                             <th style="text-align: center;">Jenis</th>
 														<th style="text-align: center;">Stok</th>
@@ -108,7 +116,8 @@
 															foreach ($barang as $key) { ?>
 														<tr class="center">
 															<td><?php echo "$key->kd_barang" ?></td>
-															<td><?php echo "$key->nama_barang" ?></td>			
+                              <td><?php echo "$key->nama_barang" ?></td>      
+															<td><?php echo "$key->deskripsi" ?></td>			
 															<td><img style="width: 80px; height: 25px" sizes="" src="<?php echo base_url('assets/admin/gambar/'.$key->gambar_barang) ?>"></td>
                               <td><?php echo "$key->jenis_barang" ?></td>
 															<td><?php echo "$key->stok_barang" ?></td>

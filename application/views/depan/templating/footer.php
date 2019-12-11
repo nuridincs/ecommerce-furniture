@@ -49,9 +49,9 @@
 <div class="footer">
 	<div class="footer_agile_inner_info_w3l">
 		<div class="col-md-3 footer-left">
-			<h2><a href="index.html"><span>X</span>yz Furniture </a></h2>
-			<p>XYZ Furniture adalah situs jual beli online yang aman dan terpercaya.</p>
-			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+			<h2><a href="index.html"><span>W</span>w Furniture </a></h2>
+			<p>WW Furniture adalah situs jual beli online yang aman dan terpercaya.</p>
+<!-- 			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
 															<li><a href="#" class="facebook">
 																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
@@ -64,7 +64,7 @@
 															<li><a href="#" class="pinterest">
 																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
+														</ul> -->
 		</div>
 		<div class="col-md-9 footer-right">
 			<div class="sign-grds">
@@ -97,7 +97,7 @@
 							</div>
 							<div class="w3-address-right">
 								<h6>Email Address</h6>
-								<p>Email :<a href="mailto:example@email.com"> xyz.furniture@gmail.com</a></p>
+								<p>Email :<a href="mailto:example@email.com"> ww.furniture@gmail.com</a></p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -119,7 +119,7 @@
 			</div>
 		</div>
 		<div class="clearfix"></div>
-		<p class="copy-right">&copy 2017 Elite shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		<p class="copy-right">&copy <?= date('Y') ?> All rights reserved</p>
 	</div>
 </div>
 <!-- //footer -->

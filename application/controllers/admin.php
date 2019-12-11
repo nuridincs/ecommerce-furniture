@@ -33,6 +33,7 @@ class admin extends CI_Controller {
 	function tambah_barang(){
 		$kd_barang = $this->input->post('kd_barang');
         $nama_barang = $this->input->post('nama_barang');
+        $deskripsi = $this->input->post('deskripsi');
         $jenis_barang = $this->input->post('jenis_barang');
 		$stok_barang = $this->input->post('stok_barang');
 		$harga_barang = $this->input->post('harga_barang');
@@ -73,6 +74,7 @@ class admin extends CI_Controller {
 	function edit_barang(){
 		$kd_barang = $this->input->post('kd_barang');
         $nama_barang = $this->input->post('nama_barang');
+        $deskripsi = $this->input->post('deskripsi');
         $jenis_barang = $this->input->post('jenis_barang');
 		$stok_barang = $this->input->post('stok_barang');
 		$harga_barang = $this->input->post('harga_barang');
@@ -86,47 +88,48 @@ class admin extends CI_Controller {
 
 
 		if ($_FILES AND $_FILES['userfile']['name']) {
-		$config['upload_path'] = 'assets/admin/gambar/';
-		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
-		$config['max_size'] = '2048';
-		$config['max_width'] = '1288';
-		$config['max_height'] = '1288';
-		$config['file_name'] = $kodetampil;
+			$config['upload_path'] = 'assets/admin/gambar/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+			$config['max_size'] = '2048';
+			$config['max_width'] = '1288';
+			$config['max_height'] = '1288';
+			$config['file_name'] = $kodetampil;
 
-		$this->upload->initialize($config);
-		if (! $this->upload->do_upload('userfile')){
-			$a=$this->upload->display_errors();
-			echo $a;
+			$this->upload->initialize($config);
+			if (! $this->upload->do_upload('userfile')){
+				$a=$this->upload->display_errors();
+				echo $a;
+			}else{
+				$gbr = $this->upload->data();
+				$foto=$gbr['file_name'];
+				$kd_barang=$this->input->post('kd_barang');
+				unlink('assets/admin/gambar/'.$gambar->gambar_barang);
+				$data = array(
+					'nama_barang' => $nama_barang,
+					'stok_barang' => $stok_barang,
+					'jenis_barang' => $jenis_barang,
+					'harga_barang' => $harga_barang,
+					'gambar_barang' => $foto
+				);
+				if($this->model_admin->edit_barang($kd_barang, $data)){
+					$this->session->set_flashdata('sukses',"Barang Berhasil di Edit");
+					redirect(site_url('admin/barang'));
+				}	
+			}
 		}else{
-			$gbr = $this->upload->data();
-			$foto=$gbr['file_name'];
-			$kd_barang=$this->input->post('kd_barang');
-			unlink('assets/admin/gambar/'.$gambar->gambar_barang);
-			$data = array(
-				'nama_barang' => $nama_barang,
-				'stok_barang' => $stok_barang,
-				'jenis_barang' => $jenis_barang,
-				'harga_barang' => $harga_barang,
-				'gambar_barang' => $foto
-			);
-			if($this->model_admin->edit_barang($kd_barang, $data)){
-			$this->session->set_flashdata('sukses',"Barang Berhasil di Edit");
-			redirect(site_url('admin/barang'));
-			}	
-		}
-	}else{
 			$kd_barang=$this->input->post('kd_barang');
 			$data = array(
 				'nama_barang' => $nama_barang,
+				'deskripsi' => $deskripsi,
 				'stok_barang' => $stok_barang,
 				'jenis_barang' => $jenis_barang,
 				'harga_barang' => $harga_barang
 			);
 			if($this->model_admin->edit_barang($kd_barang, $data)){
-			$this->session->set_flashdata('sukses',"Barang Berhasil di Edit");
-			redirect(site_url('admin/barang'));
+				$this->session->set_flashdata('sukses',"Barang Berhasil di Edit");
+				redirect(site_url('admin/barang'));
 			}	
-	}
+		}
 	}
 
 	function hapus_barang($kd_barang){
@@ -153,7 +156,7 @@ class admin extends CI_Controller {
 		unlink('assets/admin/gambar/'.$gambar->gambar_pelanggan);
 		$this->model_admin->hapus_pelanggan($kd_pelanggan);
 		$this->session->set_flashdata('sukses',"Pelanggan Berhasil Dihapus");
-			redirect(site_url('admin/pelanggan'));
+		redirect(site_url('admin/pelanggan'));
 	}
 
 	function pesanan(){
@@ -209,10 +212,10 @@ class admin extends CI_Controller {
 		}
 	}
 
- function laporan(){
- 	$data['isi']='admin/laporan';
- 	$this->load->view('templating/templating', $data);
- }
+	 function laporan(){
+	 	$data['isi']='admin/laporan';
+	 	$this->load->view('templating/templating', $data);
+	 }
 
 
 	function detail($kd_transaksi){

@@ -25,8 +25,8 @@
 				   	<img src="<?php echo base_url('assets/depan/images/about.jpg')?>" alt=" " class="img-responsive" />
 				</div>
 				 <div class="col-md-6 ab_pic_w3ls_text_info">
-				    <h5>Tentang XYZ Furniture </h5>
-					<p>XYZ Furniture adalah situs jual beli online berbagai Furniture terbaik dan berkualitas dan harganya yang tidak terlalu mahal</p>
+				    <h5>Tentang WW Furniture </h5>
+					<p>WW Furniture adalah situs jual beli online berbagai Furniture terbaik dan berkualitas dan harganya yang tidak terlalu mahal</p>
 				</div>
 				  <div class="clearfix"></div>
 			</div>    
@@ -63,7 +63,7 @@
 							<!-- <img style=" height: 285px" src="<?php //echo base_url('assets/adm.jpg')?>" class="img-responsive" alt=""> -->
 							<div class="social-icons team-icons right-w3l fotw33">
 							<div class="caption">
-								<h4>XYZ Furniture</h4>
+								<h4>WW Furniture</h4>
 								<p>Add Short Description</p>						
 							</div>
 								<ul class="social-nav model-3d-0 footer-social w3_agile_social two">

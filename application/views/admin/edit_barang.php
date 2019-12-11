@@ -24,6 +24,14 @@
 										</div>
 									</div>
 									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Deskripsi Barang  </label>
+										<div class="col-sm-9">
+											<textarea name="deskripsi" class="col-xs-10 col-sm-5" />
+											<?=$data->deskripsi?>
+											</textarea>	
+										</div>
+									</div>
+									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Gambar Barang  </label>
 										<div class="col-sm-9">
 											<img style="width: 40%; height: 20%" class="img-responsive" src="<?php echo base_url('assets/admin/gambar/'.$data->gambar_barang) ?>"  widht="50px" height="50px"/>

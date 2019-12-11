@@ -56,6 +56,7 @@ Class model_admin extends CI_Model{
 		$this->data = array(
 			'kd_barang' => $this->input->post('kd_barang'),
 			'nama_barang' => $this->input->post('nama_barang'),
+			'deskripsi' => $this->input->post('deskripsi'),
 			'jenis_barang' => $this->input->post('jenis_barang'),
 			'stok_barang' => $this->input->post('stok_barang'),
 			'harga_barang' => $this->input->post('harga_barang'),

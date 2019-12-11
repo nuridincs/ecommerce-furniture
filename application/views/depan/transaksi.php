@@ -75,15 +75,15 @@
 				<div id="horizontalTab">
 						<ul class="resp-tabs-list">
 							<li>Deskripsi</li>
-							<li>Informasi</li>
+							<!-- <li>Informasi</li> -->
 						</ul>
 					<div class="resp-tabs-container">
 					<!--/tab_one-->
 					   <div class="tab1">
 
 							<div class="single_page_agile_its_w3ls">
-							  <h6>Lorem ipsum dolor sit amet</h6>
-							   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+								<h6><?php echo $barang['nama_barang'] ?></h6>
+							   	<p><?= $barang['deskripsi'] ?></p>
 							</div>
 						</div>
 						<!--//tab_one-->
@@ -99,7 +99,7 @@
 					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 						<a href="<?php echo base_url('index.php/depan/tambah_keranjang/' .$barang['kd_barang']) ?>"><input type="submit" name="submit" value="Add to cart" class="button" /></a>									
 					</div>
-					<ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
+					<!-- <ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
 						                                   <li class="share">Share On : </li>
 															<li><a href="#" class="facebook">
 																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
@@ -113,7 +113,7 @@
 															<li><a href="#" class="pinterest">
 																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
+														</ul> -->
 					
 		      </div>
 	 			<div class="clearfix"> </div>

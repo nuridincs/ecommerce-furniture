@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.27)
 # Database: db_uas
-# Generation Time: 2019-10-21 14:39:27 +0000
+# Generation Time: 2019-12-11 16:19:11 +0000
 # ************************************************************
 
 
@@ -39,8 +39,8 @@ LOCK TABLES `tb_admin` WRITE;
 
 INSERT INTO `tb_admin` (`kd_adm`, `nama_adm`, `user_adm`, `pass_adm`, `level_adm`)
 VALUES
-	(1,'Rizky Fathurahman','admin','202cb962ac59075b964b07152d234b70','admin'),
-	(2,'kiki','pemilik','202cb962ac59075b964b07152d234b70','pemilik');
+	(1,'admin','admin','202cb962ac59075b964b07152d234b70','admin'),
+	(2,'admin2','pemilik','202cb962ac59075b964b07152d234b70','pemilik');
 
 /*!40000 ALTER TABLE `tb_admin` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -54,6 +54,7 @@ DROP TABLE IF EXISTS `tb_barang`;
 CREATE TABLE `tb_barang` (
   `kd_barang` varchar(10) NOT NULL,
   `nama_barang` varchar(100) NOT NULL,
+  `deskripsi` text,
   `gambar_barang` varchar(50) NOT NULL,
   `jenis_barang` varchar(10) NOT NULL,
   `stok_barang` int(10) NOT NULL,
@@ -63,24 +64,24 @@ CREATE TABLE `tb_barang` (
 LOCK TABLES `tb_barang` WRITE;
 /*!40000 ALTER TABLE `tb_barang` DISABLE KEYS */;
 
-INSERT INTO `tb_barang` (`kd_barang`, `nama_barang`, `gambar_barang`, `jenis_barang`, `stok_barang`, `harga_barang`)
+INSERT INTO `tb_barang` (`kd_barang`, `nama_barang`, `deskripsi`, `gambar_barang`, `jenis_barang`, `stok_barang`, `harga_barang`)
 VALUES
-	('BR001','Sharp LED Aquos 24 Inc','20180710-1001.jpg','LED TV',7,2500000),
-	('BR002','Tcl LED 32 Inch','20180710-0001.jpg','LED TV',10,2300000),
-	('BR003','Philip LED 32 Inch','20180710-000.jpg','LED TV',10,3000000),
-	('BR004','Polytron LED 32 Inch','20180710-0002.jpg','LED TV',0,2800000),
-	('BR005','Kasur Busa','20180710-0003.jpg','Kasur',8,750000),
-	('BR006','Kasur Lipat','20180710-0004.jpg','Kasur',8,350000),
-	('BR007','Kasur Udara','20180710-0005.jpg','Kasur',-6,550000),
-	('BR008','Kursi Kantor','20180710-0006.jpg','Kursi',20,150000),
-	('BR009','Kursi Lipat','20180710-0007.jpg','Kursi',20,50000),
-	('BR010','Kursi Plastik','20180710-0008.JPG','Kursi',100,30000),
-	('BR011','Kursi Susun','20180710-0009.jpg','Kursi',100,45000),
-	('BR012','Kursi Warung','20180710-00010.jpg','Kursi',90,20000),
-	('BR013','Lemari Laci Plastik','20180710-00011.jpg','Lemari',10,550000),
-	('BR014','Lemari Plastik','20180710-00012.jpg','Lemari',10,750000),
-	('BR015','Lemari Rak','20180710-00013.jpg','Lemari',10,1000000),
-	('BR016','Lemari Slider','20180710-00014.jpg','Lemari',10,1300000);
+	('BR001','Sharp LED Aquos 24 Inc','smart tv','20180710-1001.jpg','LED TV',7,2500000),
+	('BR002','Tcl LED 32 Inch','test','20180710-0001.jpg','LED TV',10,2300000),
+	('BR003','Philip LED 32 Inch','test','20180710-000.jpg','LED TV',10,3000000),
+	('BR004','Polytron LED 32 Inch','test','20180710-0002.jpg','LED TV',0,2800000),
+	('BR005','Kasur Busa',NULL,'20180710-0003.jpg','Kasur',7,750000),
+	('BR006','Kasur Lipat',NULL,'20180710-0004.jpg','Kasur',8,350000),
+	('BR007','Kasur Udara',NULL,'20180710-0005.jpg','Kasur',-7,550000),
+	('BR008','Kursi Kantor',NULL,'20180710-0006.jpg','Kursi',20,150000),
+	('BR009','Kursi Lipat',NULL,'20180710-0007.jpg','Kursi',20,50000),
+	('BR010','Kursi Plastik',NULL,'20180710-0008.JPG','Kursi',100,30000),
+	('BR011','Kursi Susun',NULL,'20180710-0009.jpg','Kursi',100,45000),
+	('BR012','Kursi Warung',NULL,'20180710-00010.jpg','Kursi',90,20000),
+	('BR013','Lemari Laci Plastik',NULL,'20180710-00011.jpg','Lemari',10,550000),
+	('BR014','Lemari Plastik',NULL,'20180710-00012.jpg','Lemari',10,750000),
+	('BR015','Lemari Rak',NULL,'20180710-00013.jpg','Lemari',10,1000000),
+	('BR016','Lemari Slider',NULL,'20180710-00014.jpg','Lemari',10,1300000);
 
 /*!40000 ALTER TABLE `tb_barang` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -111,7 +112,8 @@ VALUES
 	('BY-20180714-004','TR-20180714-005','PG001','Mandiri(0700 000 899','2.500.000,00','BY20180714-002.jpg'),
 	('BY-20180714-005','TR-20180714-006','PG001','Mandiri(0700 000 899','2.500.000,00','BY20180714-003.jpg'),
 	('BY-20180714-006','TR-20180714-007','PG001','Mandiri(0700 000 899','2.500.000,00','BY20180714-004.jpg'),
-	('BY-20180714-007','TR-20180714-008','PG001','Mandiri(0700 000 899','2.500.000,00','BY20180714-005.jpg');
+	('BY-20180714-007','TR-20180714-008','PG001','Mandiri(0700 000 899','2.500.000,00','BY20180714-005.jpg'),
+	('BY-20191211-008','TR-20191211-010','PG004','BCA(731 025 2527)','1.300.000,00','BY20191211-00.jpg');
 
 /*!40000 ALTER TABLE `tb_bayar` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -139,7 +141,7 @@ INSERT INTO `tb_pelanggan` (`kd_pelanggan`, `nama_pelanggan`, `email_pelanggan`,
 VALUES
 	('PG001','Rizky Fathurahman','rizky172@gmail.com','098f6bcd4621d373cade4e832627b4f6','20180710-100.jpg','Kp.Karajeun II Rt 03/Rw 01 Kec. Sagaranten Kab. Sukabumi'),
 	('PG003','aa','aa@gmail.com','098f6bcd4621d373cade4e832627b4f6','',''),
-	('PG004','test','test@gmail.com','098f6bcd4621d373cade4e832627b4f6','','');
+	('PG004','test','test@gmail.com','202cb962ac59075b964b07152d234b70','','');
 
 /*!40000 ALTER TABLE `tb_pelanggan` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -173,7 +175,9 @@ VALUES
 	(7,'TR-20180714-005','BR001',1,2500000,2500000),
 	(8,'TR-20180714-006','BR001',1,2500000,2500000),
 	(9,'TR-20180714-007','BR001',1,2500000,2500000),
-	(10,'TR-20180714-008','BR001',1,2500000,2500000);
+	(10,'TR-20180714-008','BR001',1,2500000,2500000),
+	(11,'TR-20191211-010','BR005',1,750000,750000),
+	(12,'TR-20191211-010','BR007',1,550000,550000);
 
 /*!40000 ALTER TABLE `tb_rinci` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -189,12 +193,12 @@ CREATE TABLE `tb_transaksi` (
   `kd_pelanggan` varchar(10) NOT NULL,
   `tgl_beli` date NOT NULL,
   `alamat_kirim` longtext NOT NULL,
-  `no_hp` int(12) NOT NULL,
+  `no_hp` int(13) NOT NULL,
   `atas_nama` varchar(20) NOT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
   `status_bayar` int(10) NOT NULL,
-  `tgl_konfirmasi` date NOT NULL,
-  `user_konfirmasi` varchar(10) NOT NULL,
+  `tgl_konfirmasi` date DEFAULT NULL,
+  `user_konfirmasi` varchar(10) DEFAULT '',
   PRIMARY KEY (`kd_transaksi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -209,7 +213,9 @@ VALUES
 	('TR-20180714-005','PG001','2018-07-14','2',2,'2','1',1,'2018-07-14','admin'),
 	('TR-20180714-006','PG001','2018-07-14','1',1,'1','0',1,'0000-00-00',''),
 	('TR-20180714-007','PG001','2018-07-14','1',1,'1','0',1,'0000-00-00',''),
-	('TR-20180714-008','PG001','2018-07-14','1',1,'1','0',1,'0000-00-00','');
+	('TR-20180714-008','PG001','2018-07-14','1',1,'1','0',1,'0000-00-00',''),
+	('TR-20191211-009','PG004','2019-12-11','test',819104331,'test','0',0,NULL,''),
+	('TR-20191211-010','PG004','2019-12-11','test',932424234,'test','0',1,NULL,'');
 
 /*!40000 ALTER TABLE `tb_transaksi` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -235,7 +241,7 @@ LOCK TABLES `tmp_pesan` WRITE;
 
 INSERT INTO `tmp_pesan` (`kd_pesan`, `kd_pelanggan`, `kd_barang`, `tgl_pesan`, `qty_pesan`, `harga_pesan`)
 VALUES
-	(1,'PG004','BR007','2019-10-21',1,550000);
+	(5,'PG004','BR005','2019-12-11',1,750000);
 
 /*!40000 ALTER TABLE `tmp_pesan` ENABLE KEYS */;
 UNLOCK TABLES;
