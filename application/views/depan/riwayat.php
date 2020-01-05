@@ -54,8 +54,8 @@
         </td>
         <td style="text-align: center;">
           <?php if ($key->status_konfirmasi == '1' && $key->status_bayar == '1') { ?>
-            <a href="<?php echo base_url('index.php/depan/cetak_nota/'. $key->kd_transaksi) ?>">Nota |</a>
-                       <a href="<?php echo base_url('index.php/depan/detail/'. $key->kd_transaksi) ?>">Detail</a>
+            <!-- <a href="<?php //echo base_url('index.php/depan/cetak_nota/'. $key->kd_transaksi) ?>">Nota |</a> -->
+            <a href="<?php echo base_url('index.php/depan/detail/'. $key->kd_transaksi) ?>">Detail</a>
           <?php } ?>
         </td>
       </tr>

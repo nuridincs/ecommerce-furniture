@@ -10,6 +10,7 @@ class admin extends CI_Controller {
 		}
 		$this->load->model('model_admin');
 		$this->load->library('FPDF');
+		$this->load->library('email'); 
 		define('FPDF_FONTPATH', $this->config->item('fonts_path'));
 	}
 
@@ -183,6 +184,7 @@ class admin extends CI_Controller {
 			'kd_transaksi' =>$kd_transaksi
 		);
 		$this->model_admin->konfirmasi($where, $tgl, $user);
+		$this->getDtlTrx($kd_transaksi);
 		$this->session->set_flashdata('sukses',"Pesanan Berhasil di Konfirmasi");
 			redirect(site_url('admin/pesanan'));
 	}
@@ -222,5 +224,41 @@ class admin extends CI_Controller {
 		$data['isi']='admin/detail';
 		$data['detail']=$this->model_admin->get_detail($kd_transaksi);
 		$this->load->view('templating/templating',$data);
+	}
+
+	public function sendEmail($data){
+		$emailUser = $data->email_pelanggan;
+		$subject = "Konfirmasi Pembayaran Berhasil";
+		$msg = $this->load->view('admin/konfirmasi_pembayaran', $data, TRUE);
+		$ci = get_instance();
+		$config['protocol'] = "smtp";
+		$config['smtp_host'] = "ssl://smtp.googlemail.com";
+		$config['smtp_port'] = "465";
+		$config['smtp_user'] = "projekdevelopment@gmail.com";
+		$config['smtp_pass'] = "d3veL0pm3nt";
+		$config['charset'] = "utf-8";
+		$config['mailtype'] = "html";
+		$config['newline'] = "\r\n";
+		$ci->email->initialize($config);
+		$ci->email->from('noreply@wwfurniture.com', 'WW Furniture');
+		$ci->email->to($emailUser);
+		$ci->email->subject($subject);
+		$ci->email->message($msg);
+		$this->email->send();
+		// if ($this->email->send()) {
+		// 	echo 'Email sent.';
+		// } else {
+		// 	show_error($this->email->print_debugger());
+		// }
+	}
+
+	public function konfirmasiPembayaran($dataTRX) {
+		$this->load->view('admin/konfirmasi_pembayaran', $dataTRX);
+	}
+
+	public function getDtlTrx($id_trx) {
+		$dataTrx = $this->model_admin->getDetailTrx($id_trx);
+		$this->sendEmail($dataTrx);
+		// $this->konfirmasiPembayaran($dataTrx);
 	}
 }

@@ -1,6 +1,7 @@
 <?PHP
 	date_default_timezone_set("Asia/Jakarta");
-
+	// echo "<pre>";
+	// print_r($laporan);die('ok');
 
 	$pdf = new FPDF('L', 'pt', 'A4');
 	$pdf -> SetTitle('Laporan rekapitulasi barang');
@@ -37,8 +38,10 @@
 	$pdf ->Cell(90,40,"Kode Barang",1,"LR","C", true);
 	$pdf ->Cell(150,40,"Nama Barang",1,"LR","C", true);
 	$pdf ->Cell(90,40,"Jenis Barang",1,"LR","C", true);
-	$pdf ->Cell(90,40,"Stok Barang",1,"LR","C", true);
-	$pdf ->Cell(90,40,"Harga Barang",1,"LR","C", true);
+	$pdf ->Cell(50,40,"Stok",1,"LR","C", true);
+	$pdf ->Cell(50,40,"Terjual",1,"LR","C", true);
+	$pdf ->Cell(50,40,"Sisa",1,"LR","C", true);
+	$pdf ->Cell(60,40,"Harga Barang",1,"LR","C", true);
 	$pdf ->Ln();
 	if(!empty($laporan)){
 		$no = 0;
@@ -49,11 +52,13 @@
 			$pdf ->Cell(20,40,$no,1,"LR","C");
 			$pdf ->Image(base_url('assets/admin/gambar').'/'.$key->gambar_barang,158,$nilaiY,35);
 			$pdf ->Cell(90,40,"",1,"LR","C");
-			$pdf ->Cell(90,40,$key->kd_barang,1,"LR","C");
+			$pdf ->Cell(90,40,$key->kdbarang,1,"LR","C");
 			$pdf ->Cell(150,40,$key->nama_barang,1,"LR","C");
 			$pdf ->Cell(90,40,$key->jenis_barang,1,"LR","C");
-			$pdf ->Cell(90,40,$key->stok_barang,1,"LR","C");
-			$pdf ->Cell(90,40,$key->harga_barang,1,"LR","C");
+			$pdf ->Cell(50,40,$key->stok_barang,1,"LR","C");
+			$pdf ->Cell(50,40,$key->terjual,1,"LR","C");
+			$pdf ->Cell(50,40,$key->sisa,1,"LR","C");
+			$pdf ->Cell(60,40,$key->harga_barang,1,"LR","C");
 			$pdf->Ln();
 			$nilaiY = $pdf->GetY();
 		}

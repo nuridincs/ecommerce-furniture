@@ -30,7 +30,13 @@ Class model_admin extends CI_Model{
 	}
 
 	function get_barang(){
-		$result=$this->db->get('tb_barang');
+		// $result=$this->db->get('tb_barang');
+		$query = 'select *, tb_barang.kd_barang as kdbarang, COALESCE(sum(tb_rinci.qty_rinci), 0) as terjual, COALESCE((tb_barang.stok_barang - sum(tb_rinci.qty_rinci)), tb_barang.stok_barang) as sisa
+			from tb_barang
+			left join tb_rinci on tb_rinci.kd_barang=tb_barang.kd_barang
+			left join tb_transaksi on tb_transaksi.kd_transaksi=tb_rinci.kd_transaksi
+			group by tb_barang.kd_barang';
+		$result = $this->db->query($query);
 		return $result->result();
 	}
 
@@ -198,6 +204,19 @@ Class model_admin extends CI_Model{
    	$result = $this->db->where('tb_rinci.kd_transaksi', $kd_transaksi);
    	$result = $this->db->get('');
    	return $result->result();
+   }
+
+   public function getDetailTrx($id_trx) {
+   	$query = "select *
+				from tb_transaksi
+				inner join tb_rinci on tb_rinci.kd_transaksi=tb_transaksi.kd_transaksi
+				inner join tb_barang on tb_barang.kd_barang=tb_rinci.kd_barang
+				inner join tb_pelanggan on tb_pelanggan.kd_pelanggan=tb_transaksi.kd_pelanggan
+				where tb_transaksi.kd_transaksi = '$id_trx'
+				group by tb_transaksi.kd_transaksi";
+	$result = $this->db->query($query);
+
+	return $result->row();
    }
 
 }

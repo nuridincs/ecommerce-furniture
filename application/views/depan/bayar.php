@@ -64,7 +64,7 @@
       <tr><td colspan="6">&nbsp;</td></tr>
   </table>
 
-  <form method="POST" enctype="multipart/form-data" class="form-horizontal" action="<?=base_url() ?>index.php/depan/proses_bayar/">
+  <form method="POST" enctype="multipart/form-data" class="form-horizontal" action="<?=base_url() ?>depan/proses_bayar/">
     <table style="background-color: #F4F4F4" class="table table-bordered">
       <tr>
         <td colspan="3" bgcolor="#CCCCCC"><strong>Pembayaran</strong></td>

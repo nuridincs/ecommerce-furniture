@@ -59,6 +59,7 @@ Class model_depan extends CI_Model{
 		 }
 
 	function daftar($data){
+		// print_r($data);die('ok ');
 		$query=$this->db->insert('tb_pelanggan',$data);
 		if($query){
 			return TRUE;

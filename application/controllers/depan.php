@@ -6,6 +6,7 @@ class depan extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('model_depan');
+		$this->load->library('email'); 
 	}
 
 
@@ -36,19 +37,20 @@ class depan extends CI_Controller {
 			$this->session->set_flashdata('error',"Password Tidak Cocok !");
 			redirect('depan');	
 		}else{
-			$data = array(
+			$data2 = array(
 				'pass_pelanggan' => MD5($pass_pelanggan),
 				 );
 			$where = array(
 				'kd_pelanggan' => $kd_pelanggan,
 				 );
-		if ($this->model_depan->cek_email($email_pelanggan)) {
-			$this->session->set_flashdata('error',"Email Sudah ada");
-			redirect(site_url('depan'));
-		}else{
-			$this->model_depan->daftar($data);
-			$this->session->set_flashdata('sukses',"Anda Berhasil Daftar Silahkan Login");
-			redirect(site_url('depan'));
+
+			if ($this->model_depan->cek_email($email_pelanggan)) {
+				$this->session->set_flashdata('error',"Email Sudah ada");
+				redirect(site_url('depan'));
+			}else{
+				$this->model_depan->daftar($data);
+				$this->session->set_flashdata('sukses',"Anda Berhasil Daftar Silahkan Login");
+				redirect(site_url('depan'));
 			}
 		}
 	}
@@ -246,6 +248,7 @@ class depan extends CI_Controller {
 			$this->model_depan->update_bayar($kd_tr);
 			if($this->model_depan->tambah_bayar())
 				$this->session->set_flashdata('sukses',"Barang Berhasil di Bayar");
+        		$this->getTrxUser();
 			redirect(site_url('depan/riwayat'));
 		}
 	}
@@ -373,6 +376,50 @@ class depan extends CI_Controller {
 		$data['result'] = $query->result();
 		$data['isi']='depan/search';
 		$this->load->view('depan/templating/templating', $data);
+	}
+
+	public function sendEmail($data){
+		$subject = "Pembayaran Berhasil";
+		$msg = $this->load->view('depan/pembayaran_success',$data,TRUE);
+		$email = $data['email'];
+		$ci = get_instance();
+		$config['protocol'] = "smtp";
+		$config['smtp_host'] = "ssl://smtp.googlemail.com";
+		$config['smtp_port'] = "465";
+		$config['smtp_user'] = "projekdevelopment@gmail.com";
+		$config['smtp_pass'] = "d3veL0pm3nt";
+		$config['charset'] = "utf-8";
+		$config['mailtype'] = "html";
+		$config['newline'] = "\r\n";
+		$ci->email->initialize($config);
+		$ci->email->from('noreply@wwfurniture.com', 'WW Furniture');
+		$ci->email->to($email);
+		$ci->email->subject($subject);
+		$ci->email->message($msg);
+		$this->email->send();
+		// if ($this->email->send()) {
+		// 	echo 'Email sent.';
+		// } else {
+		// 	show_error($this->email->print_debugger());
+		// }
+	}
+
+	public function pembayaranSuccess($data) {
+		$this->load->view('depan/pembayaran_success', $data);
+	}
+
+	public function getTrxUser() {
+		$pelanggan = $this->model_depan->profil($this->session->userdata('kd_pelanggan'));
+		$dataTRX = array(
+			'kd_bayar' 		=> $this->input->post('kd_bayar'),
+			'kd_transaksi'	=> $this->input->post('kd_transaksi'),
+			'kd_pelanggan' 	=> $this->session->userdata('kd_pelanggan'),
+			'nama_bank' 	=> $this->input->post('nama_bank'),
+			'jml_bayar' 	=> $this->input->post('jml_bayar'),
+			'username'			=> $pelanggan->nama_pelanggan,
+			'email'			=> $pelanggan->email_pelanggan
+		);
+		$this->sendEmail($dataTRX);
 	}
 
 }
