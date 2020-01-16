@@ -125,10 +125,10 @@
                               <?php if ($this->session->userdata('level_adm')=='admin') { ?>
 															<td>
 																<div class="hidden-sm hidden-xs action-buttons">
-																	<a class="green" href="<?php echo site_url('admin/kd_edit_barang/'.$key->kd_barang) ?>">
+																	<a class="green" href="<?php echo site_url('admin/kd_edit_barang/'.$key->kdbarang) ?>">
 																		<i class="ace-icon fa fa-pencil bigger-130"></i>
 																	</a>
-																	<a class="red" href="<?php echo site_url('admin/hapus_barang/' .$key->kd_barang) ?>">
+																	<a class="red" onclick="return confirm('Apa Anda yakin ingin menghapus data ini ?');" href="<?php echo base_url('admin/hapus_barang/' .$key->kdbarang) ?>">
 																		<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																	</a>
 																</div>

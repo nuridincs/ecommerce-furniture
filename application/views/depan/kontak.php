@@ -24,7 +24,7 @@
 						<div class="contact-grid-agile-w31">
 							<i class="fa fa-map-marker" aria-hidden="true"></i>
 							<h4>Address</h4>
-							<p>Kp. Karajeun II RT.03/RW.01</span></p>
+							<p>Jl. Permai Raya No. 143 Harapan Jaya Bekasi Utara</span></p>
 						</div>
 					</div>
 					<div class="col-md-4 contact-grid-agile-w3">
@@ -68,7 +68,7 @@
 							<div class="mail-agileits-w3layouts">
 								<i class="fa fa-map-marker" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Location</p><span>Kp. Karajeun II RT.03/RW.01</span>
+									<p>Location</p><span>Jl. Permai Raya No. 143 Harapan Jaya Bekasi Utara</span>
 								</div>
 								<div class="clearfix"> </div>
 							</div>

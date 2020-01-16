@@ -136,9 +136,9 @@ class admin extends CI_Controller {
 	function hapus_barang($kd_barang){
 		$gambar = $this->model_admin->gambar($kd_barang);
 	 	unlink('assets/admin/gambar/'.$gambar->gambar_barang);
-	  	$this->model_admin->hapus_barang($kd_barang);
-	  	$this->session->set_flashdata('sukses',"Data Berhasil Dihapus");
-			redirect(site_url('admin/barang'));
+		$this->model_admin->hapus_barang($kd_barang);
+		$this->session->set_flashdata('sukses',"Data Berhasil Dihapus");
+		redirect(site_url('admin/barang'));
 	}
 
 	function pelanggan(){

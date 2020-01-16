@@ -87,7 +87,7 @@
 							</div>
 							<div class="w3-address-right">
 								<h6>Phone Number</h6>
-								<p>+1 234 567 8901</p>
+								<p>+62 85715992992</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -107,7 +107,7 @@
 							</div>
 							<div class="w3-address-right">
 								<h6>Location</h6>
-								<p>Kp. Karajeun II RT. 03/Rw. 01 
+								<p>Jl. Permai Raya No. 143 Harapan Jaya Bekasi Utara 
 								
 								</p>
 							</div>
