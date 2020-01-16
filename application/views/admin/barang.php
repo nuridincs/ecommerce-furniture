@@ -98,7 +98,7 @@
 											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 												<thead>
 													<tr>
-														<th style="text-align: center;">Kode</th>
+														<th style="text-align: center;">No</th>
                             <th style="text-align: center;">Nama</th>
 														<th style="text-align: center;">Deskripsi</th>
 														<th style="text-align: center;">Gambar</th>
@@ -113,9 +113,10 @@
 												<tbody>
 													<?php
 														if($barang){
-															foreach ($barang as $key) { ?>
+                              $no = 0;
+															foreach ($barang as $key) { $no++ ?>
 														<tr class="center">
-															<td><?php echo "$key->kd_barang" ?></td>
+															<td><?php echo $no; ?></td>
                               <td><?php echo "$key->nama_barang" ?></td>      
 															<td><?php echo "$key->deskripsi" ?></td>			
 															<td><img style="width: 80px; height: 25px" sizes="" src="<?php echo base_url('assets/admin/gambar/'.$key->gambar_barang) ?>"></td>

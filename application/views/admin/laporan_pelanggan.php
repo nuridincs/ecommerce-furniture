@@ -33,10 +33,10 @@
 	$pdf ->SetLineWidth(1,5);
 	$pdf ->SetFillColor(252,255,189);
 	$pdf ->Cell(20,40,"No",1,"LR","C", true);
-	$pdf ->Cell(90,40,"Gambar",1,"LR","C", true);
+	// $pdf ->Cell(90,40,"Gambar",1,"LR","C", true);
 	$pdf ->Cell(90,40,"Kode",1,"LR","C", true);
 	$pdf ->Cell(90,40,"Nama",1,"LR","C", true);
-	$pdf ->Cell(90,40,"Email",1,"LR","C", true);
+	$pdf ->Cell(150,40,"Email",1,"LR","C", true);
 	$pdf ->Cell(90,40,"Alamat",1,"LR","C", true);
 	$pdf ->Ln();
 	if(!empty($laporan)){
@@ -46,12 +46,12 @@
 			$no ++;
 			$pdf ->SetX(120);
 			$pdf ->Cell(20,40,$no,1,"LR","C");
-			$pdf ->Image(base_url('assets/admin/gambar').'/'.$key->foto_pelanggan,158,$nilaiY,35);
-			$pdf ->Cell(90,40,"",1,"LR","C");
+			// $pdf ->Image(base_url('assets/admin/gambar').'/'.$key->foto_pelanggan,158,$nilaiY,35);
 			$pdf ->Cell(90,40,$key->kd_pelanggan,1,"LR","C");
 			$pdf ->Cell(90,40,$key->nama_pelanggan,1,"LR","C");
-			$pdf ->Cell(90,40,$key->email_pelanggan,1,"LR","C");
+			$pdf ->Cell(150,40,$key->email_pelanggan,1,"LR","C");
 			$pdf ->Cell(90,40,$key->alamat_pelanggan,1,"LR","C");
+			// $pdf ->Cell(90,40,$key->alamat_pelanggan,1,"LR","C");
 			$pdf->Ln();
 			$nilaiY = $pdf->GetY();
 		}
